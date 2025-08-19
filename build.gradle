@@ -1,0 +1,8 @@
+plugins {
+    id 'application'
+}
+
+application {
+    // mainClass must match the full class name (with package if you add one)
+    mainClass = 'BasicApp'
+}
