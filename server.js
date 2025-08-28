@@ -1,10 +1,13 @@
 const express = require("express");
 const app = express();
+const port = process.env.PORT || 8080;
 
 app.get("/", (req, res) => {
-  res.send("Hello from Node.js App on ECS Fargate!");
+  res.send("Hello from Elastic Beanstalk Node.js App!");
 });
 
 app.get("/health", (req, res) => res.status(200).send("OK"));
 
-app.listen(3000, () => console.log("App running on port 3000"));
+app.listen(port, () => {
+  console.log(`Server running on port ${port}`);
+});
