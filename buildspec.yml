@@ -11,10 +11,7 @@ phases:
     commands:
       - echo "Running build..."
       - npm run build || echo "No build step, skipping..."
-  post_build:
-    commands:
-      - echo "Zipping app..."
-      - zip -r app.zip * 
 artifacts:
   files:
-    - app.zip
+    - '**/*'
+    - '!node_modules/**'   # exclude node_modules, EB will install them
